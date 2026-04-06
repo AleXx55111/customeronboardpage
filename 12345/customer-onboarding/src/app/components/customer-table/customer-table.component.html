@@ -1,0 +1,95 @@
+<!-- Account ID Search Bar -->
+<div class="account-search-bar">
+  <input
+    type="text"
+    placeholder="Customer Account ID"
+    [(ngModel)]="searchQuery"
+    (ngModelChange)="onSearchChange()"
+  />
+  <button class="search-btn" (click)="onSearchChange()">🔍</button>
+</div>
+
+<!-- Top Action Bar -->
+<div class="top-actions">
+  <button class="btn-add" (click)="openAddModal()">+ Add Customer</button>
+</div>
+
+<!-- Table Card -->
+<div class="table-card">
+  <table>
+    <thead>
+      <tr>
+        <th (click)="sort('firstName')">Employee <span class="sort-icon">{{ getSortIcon('firstName') }}</span></th>
+        <th (click)="sort('role')">Role <span class="sort-icon">{{ getSortIcon('role') }}</span></th>
+        <th (click)="sort('accountBalance')">Account Balance <span class="sort-icon">{{ getSortIcon('accountBalance') }}</span></th>
+        <th (click)="sort('startDate')">Start date <span class="sort-icon">{{ getSortIcon('startDate') }}</span></th>
+        <th class="col-actions">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (customer of displayedCustomers; track customer.accountId; let i = $index) {
+        <tr>
+          <td>
+            <div class="emp-cell">
+              <span class="emp-icon">👤</span>
+              <span class="emp-name">{{ customer.firstName }} {{ customer.lastName }}</span>
+            </div>
+          </td>
+          <td><span class="role-text">{{ customer.role }}</span></td>
+          <td><span class="balance-text">{{ formatBalance(customer.accountBalance) }}</span></td>
+          <td>
+            <input
+              class="date-input"
+              type="date"
+              [value]="customer.startDate"
+              (change)="onDateChange(i, $event)"
+            />
+          </td>
+          <td>
+            <div class="row-actions">
+              <span class="act-btn edit" title="Edit"   (click)="onEdit(i)">✏️</span>
+              <span class="act-btn del"  title="Delete" (click)="onDelete(i)">🗑</span>
+              <span class="act-btn more" title="More">···</span>
+            </div>
+          </td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <!-- Decorative SVG Wave -->
+  <div class="wave-section">
+    <div class="wave-canvas">
+      <svg width="860" height="220" viewBox="0 0 860 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="#2e6e85" stroke-width="1.2">
+          <line x1="430" y1="220" x2="0"   y2="0"/><line x1="430" y1="220" x2="40"  y2="0"/>
+          <line x1="430" y1="220" x2="80"  y2="0"/><line x1="430" y1="220" x2="120" y2="0"/>
+          <line x1="430" y1="220" x2="160" y2="0"/><line x1="430" y1="220" x2="200" y2="0"/>
+          <line x1="430" y1="220" x2="240" y2="0"/><line x1="430" y1="220" x2="280" y2="0"/>
+          <line x1="430" y1="220" x2="320" y2="0"/><line x1="430" y1="220" x2="360" y2="0"/>
+          <line x1="430" y1="220" x2="400" y2="0"/><line x1="430" y1="220" x2="430" y2="0"/>
+          <line x1="430" y1="220" x2="460" y2="0"/><line x1="430" y1="220" x2="500" y2="0"/>
+          <line x1="430" y1="220" x2="540" y2="0"/><line x1="430" y1="220" x2="580" y2="0"/>
+          <line x1="430" y1="220" x2="620" y2="0"/><line x1="430" y1="220" x2="660" y2="0"/>
+          <line x1="430" y1="220" x2="700" y2="0"/><line x1="430" y1="220" x2="740" y2="0"/>
+          <line x1="430" y1="220" x2="780" y2="0"/><line x1="430" y1="220" x2="820" y2="0"/>
+          <line x1="430" y1="220" x2="860" y2="0"/>
+          <path d="M 120 220 Q 430 40 740 220"  fill="none"/>
+          <path d="M 80  220 Q 430 10 780 220"  fill="none"/>
+          <path d="M 200 220 Q 430 80 660 220"  fill="none"/>
+          <path d="M 260 220 Q 430 110 600 220" fill="none"/>
+          <path d="M 320 220 Q 430 145 540 220" fill="none"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+@if (showModal) {
+  <app-add-customer-modal
+    [editData]="editingCustomer"
+    (save)="onModalSave($event)"
+    (cancel)="closeModal()"
+  ></app-add-customer-modal>
+}

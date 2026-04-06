@@ -1,0 +1,50 @@
+<aside class="sidebar">
+
+  <!-- Company Logo -->
+  <div class="sidebar-logo">
+    <div class="logo-icon">🏦</div>
+    <div class="logo-text">
+      <span class="logo-name">FinServe</span>
+      <span class="logo-sub">CRM Portal</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="sidebar-nav">
+    @for (group of navGroups; track group.label) {
+      <div class="nav-group">
+        <div
+          class="nav-group-header"
+          [class.active]="group.active"
+          [class.open]="group.open"
+          (click)="toggleGroup(group)"
+        >
+          <span class="g-icon">{{ group.icon }}</span>
+          <span class="g-label">{{ group.label }}</span>
+          <span class="g-arrow">›</span>
+        </div>
+
+        <div class="nav-sub" [class.open]="group.open">
+          @for (item of group.items; track item.label) {
+            <div
+              class="nav-item"
+              [class.active]="item.active"
+              (click)="activateItem(group, item)"
+            >
+              {{ item.label }}
+            </div>
+          }
+        </div>
+      </div>
+    }
+  </nav>
+
+  <div class="sidebar-spacer"></div>
+
+  <div class="sidebar-footer">
+    <button class="btn-logout" (click)="onLogout()">
+      <span class="icon">⏻</span> Logout
+    </button>
+  </div>
+
+</aside>

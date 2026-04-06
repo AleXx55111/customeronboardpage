@@ -1,0 +1,20 @@
+<div class="app-shell">
+
+  <app-sidebar (logout)="onLogout()"></app-sidebar>
+
+  <div class="main">
+    <div class="content">
+      <app-customer-table (toast)="showToast($event)"></app-customer-table>
+    </div>
+  </div>
+
+</div>
+
+<!-- Toast Notifications -->
+<div class="toast-container">
+  @for (t of toasts; track t.msg) {
+    <div class="toast" [class.err]="t.err">
+      {{ t.err ? '⚠️' : '✔' }} {{ t.msg }}
+    </div>
+  }
+</div>

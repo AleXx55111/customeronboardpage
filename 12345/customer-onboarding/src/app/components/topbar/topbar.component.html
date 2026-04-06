@@ -1,0 +1,23 @@
+<!-- ============================================
+     topbar.component.html
+     ============================================ -->
+<header class="topbar">
+
+  <!-- Back / Forward nav -->
+  <div class="topbar-nav">
+    <button title="Back"    (click)="onBack()">‹</button>
+    <button title="Forward" (click)="onForward()">›</button>
+  </div>
+
+  <!-- Global search -->
+  <div class="topbar-search">
+    <span class="s-icon">🔍</span>
+    <input
+      type="text"
+      placeholder="Search (Ctrl+E)"
+      [(ngModel)]="searchQuery"
+      (keyup.enter)="onSearch()"
+    />
+  </div>
+
+</header>

@@ -1,0 +1,60 @@
+/* ============================================
+   variables.css — Design Tokens
+   ============================================ */
+:root {
+  /* ── SIDEBAR (White) ── */
+  --sidebar-bg:              #ffffff;
+  --sidebar-border:          #e0e0e0;
+  --sidebar-shadow:          2px 0 6px rgba(0, 0, 0, 0.04);
+  --sidebar-hover:           #f0f7fa;
+  --sidebar-active-bg:       #e6f3f8;
+  --sidebar-active-color:    #3d8fa8;
+  --sidebar-text:            #2c2c2c;
+  --sidebar-muted:           #6b8fa0;
+  --sidebar-sub-bg:          #f7fbfd;
+  --sidebar-sub-border:      #eef3f6;
+  --sidebar-item-active-bg:  #e0f0f8;
+  --sidebar-item-hover-bg:   #edf6fb;
+
+  /* ── LOGOUT BUTTON ── */
+  --logout-bg:               #3d8fa8;
+  --logout-hover:            #2e7a94;
+  --logout-text:             #ffffff;
+
+  /* ── MAIN AREA ── */
+  --bg-page:                 #f2f2f2;
+  --bg-content:              #ffffff;
+  --bg-table-head:           #f5f5f5;
+  --bg-input:                #ffffff;
+
+  /* ── TEXT ── */
+  --text-dark:               #2c2c2c;
+  --text-mid:                #555555;
+  --text-light:              #888888;
+  --text-link:               #4a90b8;
+
+  /* ── BORDERS ── */
+  --border-main:             #e0e0e0;
+  --border-input:            #cccccc;
+  --border-table-cell:       #f0f0f0;
+
+  /* ── ACCENT ── */
+  --accent-teal:             #4a90b8;
+  --accent-search:           #3d8fa8;
+  --accent-search-hover:     #2e7a94;
+
+  /* ── TABLE ── */
+  --row-hover:               #f0f8fc;
+
+  /* ── FEEDBACK ── */
+  --color-error:             #d04040;
+  --color-success:           #3d8fa8;
+
+  /* ── RADIUS ── */
+  --radius:                  4px;
+  --radius-sm:               3px;
+
+  /* ── TOPBAR ── */
+  --topbar-height:           42px;
+  --topbar-bg:               #ffffff;
+}

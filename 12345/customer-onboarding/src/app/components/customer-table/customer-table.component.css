@@ -1,0 +1,215 @@
+/* ============================================
+   customer-table.component.css
+   ============================================ */
+
+/* ── Account Search Bar ── */
+.account-search-bar {
+  background: var(--bg-content);
+  border: 1px solid var(--border-main);
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  height: 36px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  max-width: 680px;
+}
+
+.account-search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12.5px;
+  color: var(--text-dark);
+  outline: none;
+  padding: 0 14px;
+}
+
+.account-search-bar input::placeholder {
+  color: var(--text-light);
+}
+
+.account-search-bar .search-btn {
+  width: 38px;
+  height: 36px;
+  background: var(--accent-search);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+
+.account-search-bar .search-btn:hover {
+  background: var(--accent-search-hover);
+}
+
+/* ── Top Action Bar ── */
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 14px;
+}
+
+.btn-add {
+  background: var(--accent-teal);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 7px 16px;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s;
+}
+
+.btn-add:hover {
+  background: #3a7fa8;
+}
+
+/* ── Table Card ── */
+.table-card {
+  background: var(--bg-content);
+  border: 1px solid var(--border-main);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  background: var(--bg-table-head);
+  border-bottom: 1px solid var(--border-main);
+}
+
+th {
+  padding: 9px 14px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-mid);
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  border-right: 1px solid var(--border-main);
+}
+
+th:last-child { border-right: none; }
+th.col-actions { width: 100px; cursor: default; }
+th:hover { color: var(--accent-teal); }
+
+.sort-icon {
+  font-size: 10px;
+  opacity: 0.5;
+  margin-left: 3px;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border-main);
+  transition: background 0.1s;
+}
+
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: var(--row-hover); }
+
+td {
+  padding: 9px 14px;
+  font-size: 12.5px;
+  color: var(--text-dark);
+  vertical-align: middle;
+  border-right: 1px solid var(--border-table-cell);
+}
+
+td:last-child { border-right: none; }
+
+/* ── Employee Cell ── */
+.emp-cell {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.emp-icon { color: var(--accent-teal); font-size: 14px; }
+
+.emp-name {
+  color: var(--text-link);
+  font-weight: 600;
+  font-size: 12.5px;
+  cursor: pointer;
+}
+
+.emp-name:hover { text-decoration: underline; }
+
+/* ── Role / Balance ── */
+.role-text    { color: var(--text-dark); font-size: 12.5px; }
+.balance-text { font-family: 'Roboto Mono', monospace; font-size: 12px; color: var(--text-dark); }
+
+/* ── Date Input ── */
+.date-input {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 11.5px;
+  color: var(--text-mid);
+  background: var(--bg-content);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  outline: none;
+  width: 126px;
+  transition: border-color 0.15s;
+}
+
+.date-input:focus { border-color: var(--accent-teal); }
+
+/* ── Row Actions ── */
+.row-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.act-btn {
+  font-size: 14px;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: color 0.15s;
+  padding: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.act-btn.edit:hover { color: var(--accent-teal); }
+.act-btn.del:hover  { color: var(--color-error);  }
+.act-btn.more { font-size: 16px; letter-spacing: -1px; }
+
+/* ── Decorative Wave ── */
+.wave-section {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.wave-canvas {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wave-canvas svg {
+  opacity: 0.09;
+}

@@ -1,0 +1,76 @@
+/* ============================================
+   topbar.component.css
+   ============================================ */
+
+.topbar {
+  background: var(--topbar-bg);
+  border-bottom: 1px solid var(--border-main);
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Back / Forward buttons */
+.topbar-nav {
+  display: flex;
+  gap: 3px;
+}
+
+.topbar-nav button {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--border-main);
+  background: #fafafa;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text-mid);
+  transition: background 0.12s;
+}
+
+.topbar-nav button:hover {
+  background: #ffffff;
+  color: var(--accent-teal);
+}
+
+/* Search bar */
+.topbar-search {
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  border: 1px solid var(--border-main);
+  border-radius: var(--radius-sm);
+  padding: 0 10px;
+  height: 28px;
+  gap: 7px;
+  flex: 1;
+  max-width: 400px;
+  transition: border-color 0.15s;
+}
+
+.topbar-search:focus-within {
+  border-color: var(--accent-teal);
+  background: #ffffff;
+}
+
+.topbar-search input {
+  border: none;
+  background: transparent;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 12px;
+  color: var(--text-dark);
+  outline: none;
+  flex: 1;
+}
+
+.topbar-search input::placeholder {
+  color: var(--text-light);
+}
+
+.topbar-search .s-icon {
+  font-size: 12px;
+  color: var(--text-light);
+}
